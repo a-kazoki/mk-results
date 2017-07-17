@@ -29,6 +29,7 @@ resApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, 
             templateUrl : "pages/patient-" + lang + ".html",
             controller : "patientCtrl"
         });
+    $locationProvider.html5Mode(true);
 }]);
 
 resApp.run(["$rootScope", "$location", "authFact", function ($rootScope, $location, authFact) {

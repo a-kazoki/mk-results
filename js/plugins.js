@@ -7,7 +7,8 @@ resApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, 
     "use strict";
     $locationProvider.hashPrefix('');
     $locationProvider.html5Mode({
-        enabled: true
+        enabled: true,
+        requireBase: false
     });
     $routeProvider
         .when("/", {

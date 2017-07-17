@@ -13,25 +13,25 @@ resApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, 
     });
     $routeProvider
         .when("/", {
-            templateUrl : "pages/patient-" + lang + ".html",
+            templateUrl : "https://a-kazoki.github.io/mk-results/pages/patient-" + lang + ".html",
             controller : "patientCtrl"
         })
         .when("/patient", {
-            templateUrl : "pages/TestResult-" + lang + ".html",
+            templateUrl : "https://a-kazoki.github.io/mk-results/pages/TestResult-" + lang + ".html",
             controller : "resultCtrl",
             authenticated : true
         })
         .when("/corp", {
-            templateUrl : "pages/TestResult-corp-" + lang + ".html",
+            templateUrl : "https://a-kazoki.github.io/mk-results/pages/TestResult-corp-" + lang + ".html",
             controller : "corpCtrl",
             authenticated : true
         })
         .when("/visitor", {
-            templateUrl : "pages/visit-" + lang + ".html",
+            templateUrl : "https://a-kazoki.github.io/mk-results/pages/visit-" + lang + ".html",
             controller : "visitCtrl"
         })
         .otherwise({//otherwise dont redirect but run a controller that checks url
-            templateUrl : "pages/patient-" + lang + ".html",
+            templateUrl : "https://a-kazoki.github.io/mk-results/pages/patient-" + lang + ".html",
             controller : "patientCtrl"
         });
 }]);

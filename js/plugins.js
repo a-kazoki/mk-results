@@ -1,16 +1,16 @@
-﻿/*global $, angular, FB, console, language, lang, oldurl, alert*/
+/*global $, angular, FB, console, language, lang, oldurl, alert*/
 // resApp js
 var resApp = angular.module("resApp", ["ngRoute", "ngCookies", "ngSanitize"]);
 
 //routes js
 resApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
     "use strict";
-    //location.hash="#/";
 
     $locationProvider.hashPrefix('');
-     $locationProvider.html5Mode({
-    enabled:true
- });
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: true
+    });
     $routeProvider
         .when("/", {
             templateUrl : "pages/patient-" + lang + ".html",
@@ -34,8 +34,6 @@ resApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, 
             templateUrl : "pages/patient-" + lang + ".html",
             controller : "patientCtrl"
         });
-    
-
 }]);
 
 resApp.run(["$rootScope", "$location", "authFact", function ($rootScope, $location, authFact) {

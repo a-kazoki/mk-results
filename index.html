@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<base href="/">
 <!-- CSS Files -->
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -19,13 +19,12 @@
 
 
 <!-- Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
     <script>
     var oldurl = "https://mobresults.almokhtabar.com:88/service/ElmokhtabarService.svc",
         language = "EN",
         lang = "en";
 </script>
-    <base href="/">
 </head>
   
 <body data-spy="scroll" data-target="#navbar-scroll" ng-app="resApp">
@@ -57,6 +56,8 @@
 					<li><a href="#Packages">Packages</a></li>
 					<li><a href="#precaution">Test precaution</a></li>
 					<li><a href="#Medical-center">Medical center</a></li>
+                       			<a href="index-arabic.html"  target="_self" class=" btn btn-danger" style="margin-top: 8px; background-color: #b91219"> عربي </a>
+
 				</ul>
 			  </div>
 		</div>
@@ -66,16 +67,16 @@
 <!-- /.parallax full screen background image -->
 <div class="fullscreen landing parallax" style="background-image:url('images/bg-2.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
 	
-	<div class="overlay">
+	<div class="overlay" style="background-color: rgba(54, 81, 91, 0.5">
 		<div class="container">
-			<div class="col-md-10 col-md-offset-1 text-center">
+			<div class="col-md-10 col-md-offset-1 text-center" style="margin-bottom: 100px; margin-top: 100px">
 			
 				<!-- /.logo -->
-				<div class="logo wow fadeInDown" style="margin-top: 50px"> <a href="http://www.almokhtabar.com/"><img src="images/logo.png" alt="logo"></a></div>
+				<div class="logo wow fadeInDown" style=""><!-- <a href="http://www.almokhtabar.com/"><img src="images/logo.png" alt="logo"></a>--></div>
 
 				<!-- /.main title -->
-					<h2 class="wow fadeInUp" style="margin-bottom: 50px">Services / Our patient</h2>
-                <h3><a href="index-arabic.html">عربي</a></h3>
+					<h2 class="wow fadeInUp" style="margin-bottom: 100px; margin-top: 100px"></h2>
+                <!--<h3><a href="index-arabic.html">عربي</a></h3>-->
 
 			</div>
 		</div> 
@@ -84,6 +85,10 @@
 			
 <div id="test-result">
 	<div class="container">
+		<div class="text-center">
+                <h2 class="wow fadeInLeft">Services</h2>
+                <div class="title-line wow fadeInRight"></div>
+            </div>
 		<div class="row">
             
             
@@ -336,7 +341,7 @@
                 </p>
                 <div class="title-line wow fadeInRight"></div>
             </div>
-            <iframe srcdoc="{{precautions}}" frameborder="0" style="height: 400px; width:80%"></iframe>
+            <iframe srcdoc="{{precautions}}" frameborder="0" style="height: 400px; width:100%"></iframe>
         </div>
     </div>
 

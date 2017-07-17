@@ -6,10 +6,6 @@ var resApp = angular.module("resApp", ["ngRoute", "ngCookies", "ngSanitize"]);
 resApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
     "use strict";
     $locationProvider.hashPrefix('');
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: true
-    });
     $routeProvider
         .when("/", {
             templateUrl : "pages/patient-" + lang + ".html",

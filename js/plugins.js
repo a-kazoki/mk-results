@@ -3,8 +3,9 @@
 var resApp = angular.module("resApp", ["ngRoute", "ngCookies", "ngSanitize"]);
 
 //routes js
-resApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
+resApp.config(["$routeProvider", "$locationProvider", "$httpProvider", function ($routeProvider, $locationProvider, $httpProvider) {
     "use strict";
+    $httpProvider.interceptors.push('httpInterceptor');
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false

@@ -3,8 +3,9 @@
 var resApp = angular.module("resApp", ["ngRoute", "ngCookies", "ngSanitize"]);
 
 //routes js
-resApp.config(["$routeProvider", function ($routeProvider) {
+resApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
     "use strict";
+    $locationProvider.hashPrefix('');
     $routeProvider
         .when("/", {
             templateUrl : "pages/patient-" + lang + ".html",

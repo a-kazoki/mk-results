@@ -12,9 +12,9 @@
         <script>
             var locationurl = window.location.href;
             console.log(locationurl);
-            if (locationurl.indexOf(".com/#") === -1) {
+            if (locationurl.indexOf("mk-results/#") === -1) {
                 console.log("old access");
-                location.href = "mk/index.html#/" + locationurl.slice((locationurl.indexOf(".com/") + 4));
+                location.href = "mk/index.html#/" + locationurl.slice((locationurl.indexOf("mk-results/") + 11));
             }
         </script>
     </head>

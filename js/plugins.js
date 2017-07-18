@@ -1,12 +1,10 @@
-/*global $, angular, FB, console, language, lang, oldurl, alert*/
+/*global $, angular, FB, console, language, lang, oldurl, alert, FormData*/
 // resApp js
 var resApp = angular.module("resApp", ["ngRoute", "ngCookies", "ngSanitize"]);
 
 //routes js
-resApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
+resApp.config(["$routeProvider", function ($routeProvider) {
     "use strict";
-
-    $locationProvider.hashPrefix('');
     $routeProvider
         .when("/", {
             templateUrl : "pages/patient-" + lang + ".html",
@@ -154,7 +152,7 @@ resApp.controller("generalCtrl", ["$scope", "$location", "$cookies", "$http", fu
             console.log(reason.data);
         });
     // house visit booking
-    $scope.bookvisit = function () {
+    /*$scope.bookvisit = function () {
         var data = JSON.stringify({
             "Body" : "Name: " + $scope.visitname + "<br>Email: " + $scope.visitemail + "<br>mobile: " + $scope.visitmobno + "<br>Time: " + $scope.visittime,
             "Subject" : "House Visit Through Website",
@@ -172,6 +170,32 @@ resApp.controller("generalCtrl", ["$scope", "$location", "$cookies", "$http", fu
             .then(function (response) {
                 alert('Thank you for booking a visit. شكرا لحجزكم زيارة منزلية');
             });
+    };*/
+    $scope.bookvisit = function () {
+        var formData = new FormData();
+        formData.append("address", $scope.visitemail);
+        formData.append('mobileNumber', $scope.visitmobno);
+        formData.append('patientName', $scope.visitname);
+        formData.append('visitTime', $scope.visittime);
+
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+                if (this.readyState === 4 && this.responseText) {
+                    console.log("Request sent");
+                    alert('Thank you for booking a visit. شكرا لحجزكم زيارة منزلية');
+                } else {
+                    console.log("request error");
+                }
+            }
+        });
+        xhr.open("POST", oldurl + "/HomeVisitReserve");
+        xhr.send(formData);
+        $scope.visitname = "";
+        $scope.visitemail = "";
+        $scope.visitmobno = "";
+        $scope.visittime = "";
     };
 }]);
 

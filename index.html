@@ -8,14 +8,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- CSS Files -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-
+        <link href="bootstrap.min.css" rel="stylesheet" media="screen">
+        <script>
+            var locationurl = window.location.href;
+            console.log(locationurl);
+            if (locationurl.indexOf(".com/#") === -1) {
+                console.log("old access");
+                location.href = "mk/index.html#/" + locationurl.slice((locationurl.indexOf(".com/") + 4));
+            }
+        </script>
     </head>
 
     <body data-spy="scroll" data-target="#navbar-scroll" ng-app="resApp">
 hi from outside
+        <a href="mk/index.html#/">index</a>
         <!-- /.javascript files -->
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="jquery.js"></script>
+        <script src="bootstrap.min.js"></script>
     </body>
 </html>

@@ -14,7 +14,8 @@
             console.log(locationurl);
             if (locationurl.indexOf("mk-results/#") === -1) {
                 console.log("old access");
-                location.href = "mk/index.html#/" + locationurl.slice((locationurl.indexOf("mk-results/") + 11));
+                console.log("mk/index.html#/" + locationurl.slice((locationurl.indexOf("mk-results/") + 11)));
+                //location.href = "mk/index.html#/" + locationurl.slice((locationurl.indexOf("mk-results/") + 11));
             }
         </script>
     </head>

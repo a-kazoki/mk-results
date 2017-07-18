@@ -7,10 +7,6 @@ resApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, 
     "use strict";
 
     $locationProvider.hashPrefix('');
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: true
-    });
     $routeProvider
         .when("/", {
             templateUrl : "https://a-kazoki.github.io/mk-results/pages/patient-" + lang + ".html",
